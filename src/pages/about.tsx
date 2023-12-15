@@ -1,22 +1,22 @@
 import { GetStaticProps, GetStaticPropsResult, NextPage } from "next";
 import Link from "next/link";
 
-interface HomeProps {
+interface AboutProps {
   locale: string;
 }
 
-const Home: NextPage<HomeProps> = ({ locale }) => {
+const About: NextPage<AboutProps> = ({ locale }) => {
   return (
     <div>
-      <h1>Welcome to {locale === "en" ? "English" : "Japanese"} Page</h1>
-      <Link href="/about">Go to About Page</Link>
+      <h1>About {locale === "en" ? "English" : "Japanese"} Page</h1>
+      <Link href="/">Go to Home Page</Link>
     </div>
   );
 };
 
-export const getStaticProps: GetStaticProps<HomeProps> = async ({
+export const getStaticProps: GetStaticProps<AboutProps> = async ({
   locale,
-}): Promise<GetStaticPropsResult<HomeProps>> => {
+}): Promise<GetStaticPropsResult<AboutProps>> => {
   // localeがundefinedの場合は、デフォルトのロケールを設定する例
   const defaultLocale = "en";
   const selectedLocale = locale || defaultLocale;
@@ -28,4 +28,4 @@ export const getStaticProps: GetStaticProps<HomeProps> = async ({
   };
 };
 
-export default Home;
+export default About;
