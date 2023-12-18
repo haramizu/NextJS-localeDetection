@@ -8,7 +8,7 @@ interface HomeProps {
 const Home: NextPage<HomeProps> = ({ locale }) => {
   return (
     <div>
-      <h1>Welcome to {locale === "en" ? "English" : "Japanese"} Page</h1>
+      <h1>Welcome to {locale === "en-US" ? "English" : "Japanese"} Page</h1>
       <Link href="/about">Go to About Page</Link>
     </div>
   );
